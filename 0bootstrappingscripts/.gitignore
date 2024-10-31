@@ -1,0 +1,10 @@
+
+# This is standard git ignore file to be included in the bootstrapping 
+# directory for IGLibScripts.
+
+/IGLibScripts
+
+/IGLibScripts/.git
+/IGLibScripts/.git1
+/IGLibScripts/.git*
+
