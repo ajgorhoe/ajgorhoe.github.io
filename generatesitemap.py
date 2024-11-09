@@ -32,8 +32,8 @@ parser = argparse.ArgumentParser(description="Generate an XML sitemap from a web
 parser.add_argument(
     "--url",
     type=str,
-    default="https://www2.arnes.si/~ljc3m2/index.html",
-    help="The URL of the HTML sitemap page to parse. Default is https://www2.arnes.si/~ljc3m2/index.html"
+    default="https://ajgorhoe.github.io/index.html",
+    help="The URL of the HTML sitemap page to parse. Default is https://ajgorhoe.github.io/index.html"
 )
 parser.add_argument(
     "--output",
