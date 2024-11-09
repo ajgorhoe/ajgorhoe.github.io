@@ -1,9 +1,31 @@
 import argparse
 from bs4 import BeautifulSoup
 import requests
-from urllib.parse import urljoin, urlparse
+from urllib.parse import urljoin, urlparse, urlunparse
 
-# Set up argument parser
+# Function to transform URLs
+def transform_url(url, base_url, keep_anchors=False, keep_index_url=False):
+    parsed_url = urlparse(url)
+
+    # Remove anchors if not keeping them
+    if not keep_anchors and parsed_url.fragment:
+        url = urlunparse(parsed_url._replace(fragment=''))
+
+    # Replace "index.html" with directory URL if not keeping index URL
+    if not keep_index_url:
+        if parsed_url.path.endswith('/index.html'):
+            url = urlunparse(parsed_url._replace(path=parsed_url.path[:-10]))
+
+    # Add trailing slash to directories without a filename
+    path_parts = parsed_url.path.split('/')
+    if not path_parts[-1]:  # already ends with a slash, keep as is
+        pass
+    elif '.' not in path_parts[-1]:  # no extension, assume it's a directory
+        url = urlunparse(parsed_url._replace(path=parsed_url.path + '/'))
+
+    return url
+
+# Argument parser setup
 parser = argparse.ArgumentParser(description="Generate an XML sitemap from a webpage's links.")
 parser.add_argument(
     "--url",
@@ -15,25 +37,41 @@ parser.add_argument(
     "--output",
     type=str,
     default="sitemap1.xml",
-    help="The output XML file name. Default is sitemap.xml"
+    help="The output XML file name. Default is sitemap1.xml"
 )
 parser.add_argument(
     "--baseurl",
     type=str,
     default=None,
-    help="The base URL to convert relative links to absolute links. If not specified, it will be derived from the URL."
+    help="The base URL for converting relative links to absolute links. Defaults to derived from URL."
+)
+parser.add_argument(
+    "--keepanchors",
+    action="store_true",
+    help="Keep anchors in URLs (default is to remove them)."
+)
+parser.add_argument(
+    "--keepindexurl",
+    action="store_true",
+    help="Keep 'index.html' in URLs (default is to remove it)."
+)
+parser.add_argument(
+    "--keepexternalurls",
+    action="store_true",
+    help="Keep external URLs (default is to exclude them)."
 )
 
-# Parse arguments
 args = parser.parse_args()
 url = args.url
 output_file = args.output
 base_url = args.baseurl
+keep_anchors = args.keepanchors
+keep_index_url = args.keepindexurl
+keep_external_urls = args.keepexternalurls
 
 # Derive the base URL if not provided
 if not base_url:
     parsed_url = urlparse(url)
-    # Construct base URL up to the last directory in the path (including the user part, if any)
     path_base = "/".join(parsed_url.path.split("/")[:-1]) + "/"
     base_url = f"{parsed_url.scheme}://{parsed_url.netloc}{path_base}"
 
@@ -49,8 +87,28 @@ html_content = response.content
 soup = BeautifulSoup(html_content, 'html.parser')
 links = [a['href'] for a in soup.find_all('a', href=True)]
 
-# Convert relative links to absolute URLs
-absolute_links = [urljoin(base_url, link) for link in links]
+# Add the initial URL as the first entry in the sitemap
+links.insert(0, url)
+
+# Convert to absolute URLs, applying transformations
+transformed_links = []
+for link in links:
+    abs_url = urljoin(base_url, link)
+    abs_url = transform_url(abs_url, base_url, keep_anchors, keep_index_url)
+
+    # Check if external URLs should be kept
+    if not keep_external_urls:
+        # Parse the transformed URL and ensure it matches the base URL domain and path
+        parsed_abs_url = urlparse(abs_url)
+        if not parsed_abs_url.netloc.endswith(urlparse(base_url).netloc):
+            continue
+        if not parsed_abs_url.path.startswith(urlparse(base_url).path):
+            continue
+
+    transformed_links.append(abs_url)
+
+# Remove duplicates
+unique_links = list(set(transformed_links))
 
 # Generate XML sitemap structure
 sitemap_template = '''<?xml version="1.0" encoding="UTF-8"?>
@@ -59,7 +117,7 @@ sitemap_template = '''<?xml version="1.0" encoding="UTF-8"?>
 </urlset>'''
 
 entries = ""
-for link in absolute_links:
+for link in unique_links:
     entries += f'''
     <url>
         <loc>{link}</loc>
