@@ -4,15 +4,17 @@ import requests
 from urllib.parse import urljoin, urlparse, urlunparse
 
 # Function to transform URLs
-def transform_url(url, base_url, keep_anchors=False, keep_index_url=False):
+def transform_url(url, base_url, keep_anchors=False, keep_index_urls=False):
+    # Replace any backslashes in the URL with forward slashes
+    url = url.replace('\\', '/')
     parsed_url = urlparse(url)
 
     # Remove anchors if not keeping them
     if not keep_anchors and parsed_url.fragment:
         url = urlunparse(parsed_url._replace(fragment=''))
 
-    # Replace "index.html" with directory URL if not keeping index URL
-    if not keep_index_url:
+    # Replace "index.html" with directory URL if not keeping index URLs
+    if not keep_index_urls:
         if parsed_url.path.endswith('/index.html'):
             url = urlunparse(parsed_url._replace(path=parsed_url.path[:-10]))
 
@@ -51,7 +53,7 @@ parser.add_argument(
     help="Keep anchors in URLs (default is to remove them)."
 )
 parser.add_argument(
-    "--keepindexurl",
+    "--keepindexurls",
     action="store_true",
     help="Keep 'index.html' in URLs (default is to remove it)."
 )
@@ -66,7 +68,7 @@ url = args.url
 output_file = args.output
 base_url = args.baseurl
 keep_anchors = args.keepanchors
-keep_index_url = args.keepindexurl
+keep_index_urls = args.keepindexurls
 keep_external_urls = args.keepexternalurls
 
 # Derive the base URL if not provided
@@ -88,17 +90,16 @@ soup = BeautifulSoup(html_content, 'html.parser')
 links = [a['href'] for a in soup.find_all('a', href=True)]
 
 # Add the initial URL as the first entry in the sitemap
-links.insert(0, url)
+unique_links = [url]  # Start with the main page URL
 
 # Convert to absolute URLs, applying transformations
 transformed_links = []
 for link in links:
     abs_url = urljoin(base_url, link)
-    abs_url = transform_url(abs_url, base_url, keep_anchors, keep_index_url)
+    abs_url = transform_url(abs_url, base_url, keep_anchors, keep_index_urls)
 
     # Check if external URLs should be kept
     if not keep_external_urls:
-        # Parse the transformed URL and ensure it matches the base URL domain and path
         parsed_abs_url = urlparse(abs_url)
         if not parsed_abs_url.netloc.endswith(urlparse(base_url).netloc):
             continue
@@ -107,8 +108,12 @@ for link in links:
 
     transformed_links.append(abs_url)
 
-# Remove duplicates
-unique_links = list(set(transformed_links))
+# Remove duplicates but maintain original order
+seen = set()
+for link in transformed_links:
+    if link not in seen:
+        unique_links.append(link)
+        seen.add(link)
 
 # Generate XML sitemap structure
 sitemap_template = '''<?xml version="1.0" encoding="UTF-8"?>
