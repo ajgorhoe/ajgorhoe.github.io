@@ -1,0 +1,39 @@
+
+.IgsAlert {
+padding: 4pt;
+background-color: #ac00e6;
+border-left: 6px solid lightgrey;
+color: white;
+opacity: 1;
+transition: opacity 1s;
+margin-bottom: 2pt;
+margin-top: 2pt;
+}
+
+.IgsAlert.IgsSuccess {background-color: #009933;}
+.IgsAlert.IgsInfo {background-color: #3366ff;}
+.IgsAlert.IgsWarning {background-color: #ff8000;}
+.IgsAlert.IgsError {background-color: #cc0000;}
+
+.IgsCloseButton {
+margin-left: 15px;
+color: white;
+font-weight: bold;
+float: right;
+/*
+font-size: 22px;
+*/
+font-size:1.5em;
+/*
+line-height: 20px;
+*/
+line-height: 1.0em;
+cursor: pointer;
+/*  */
+transition: display 0.0;
+
+}
+
+.IgsCloseButton:hover {
+color: black;
+}
