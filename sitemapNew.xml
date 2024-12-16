@@ -1,183 +1,185 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-        <loc>https://www2.arnes.si/~ljc3m2/</loc>
+        <loc>https://ajgorhoe.github.io/</loc>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://www2.arnes.si/~ljc3m2/igor/iglib/</loc>
+        <loc>https://ajgorhoe.github.io/IGLibFramework/iglib/</loc>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://www2.arnes.si/~ljc3m2/igor/</loc>
+        <loc>https://ajgorhoe.github.io/IGLibFramework/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www2.arnes.si/~ljc3m2/igor/software/codedoc/generated/iglib/</loc>
+        <loc>https://ajgorhoe.github.io/IGLibFramework/software/codedoc/generated/iglib/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://www2.arnes.si/~ljc3m2/igor/software/codedoc/generated/iglib/html/</loc>
+        <loc>https://ajgorhoe.github.io/IGLibFramework/software/codedoc/generated/iglib/html/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www2.arnes.si/~ljc3m2/igor/software/codedoc/generated/iglib/html/annotated.html</loc>
+        <loc>https://ajgorhoe.github.io/IGLibFramework/software/codedoc/generated/iglib/html/annotated.html</loc>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://www2.arnes.si/~ljc3m2/igor/software/codedoc/generated/iglib/html/hierarchy.html</loc>
+        <loc>https://ajgorhoe.github.io/IGLibFramework/software/codedoc/generated/iglib/html/hierarchy.html</loc>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://www2.arnes.si/~ljc3m2/igor/software/codedoc/generated/iglib/html/inherits.html</loc>
+        <loc>https://ajgorhoe.github.io/IGLibFramework/software/codedoc/generated/iglib/html/inherits.html</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www2.arnes.si/~ljc3m2/igor/software/codedoc/generated/iglib/html/namespaces.html</loc>
+        <loc>https://ajgorhoe.github.io/IGLibFramework/software/codedoc/generated/iglib/html/namespaces.html</loc>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>https://www2.arnes.si/~ljc3m2/igor/software/codedoc/generated/iglib/html/files.html</loc>
+        <loc>https://ajgorhoe.github.io/IGLibFramework/software/codedoc/generated/iglib/html/files.html</loc>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
     <url>
-        <loc>https://www2.arnes.si/~ljc3m2/igor/software/codedoc/generated/igliball/</loc>
+        <loc>https://ajgorhoe.github.io/IGLibFramework/software/codedoc/generated/igliball/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://www2.arnes.si/~ljc3m2/igor/software/codedoc/generated/igliball/html/</loc>
+        <loc>https://ajgorhoe.github.io/IGLibFramework/software/codedoc/generated/igliball/html/</loc>
         <changefreq>weekly</changefreq>
         <priority>1</priority>
     </url>
     <url>
-        <loc>https://www2.arnes.si/~ljc3m2/igor/software/codedoc/generated/igliball/html/annotated.html</loc>
+        <loc>https://ajgorhoe.github.io/IGLibFramework/software/codedoc/generated/igliball/html/annotated.html</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www2.arnes.si/~ljc3m2/igor/software/codedoc/generated/igliball/html/hierarchy.html</loc>
+        <loc>https://ajgorhoe.github.io/IGLibFramework/software/codedoc/generated/igliball/html/hierarchy.html</loc>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://www2.arnes.si/~ljc3m2/igor/software/codedoc/generated/igliball/html/inherits.html</loc>
+        <loc>https://ajgorhoe.github.io/IGLibFramework/software/codedoc/generated/igliball/html/inherits.html</loc>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://www2.arnes.si/~ljc3m2/igor/software/codedoc/generated/igliball/html/namespaces.html</loc>
+        <loc>https://ajgorhoe.github.io/IGLibFramework/software/codedoc/generated/igliball/html/namespaces.html</loc>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>https://www2.arnes.si/~ljc3m2/igor/software/codedoc/generated/igliball/html/files.html</loc>
+        <loc>https://ajgorhoe.github.io/IGLibFramework/software/codedoc/generated/igliball/html/files.html</loc>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
     <url>
-        <loc>https://www2.arnes.si/~ljc3m2/igor/software/</loc>
+        <loc>https://ajgorhoe.github.io/IGLibFramework/software/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://www2.arnes.si/~ljc3m2/igor/software/NeurApp/</loc>
+        <loc>https://ajgorhoe.github.io/IGLibFramework/software/NeurApp/</loc>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://www2.arnes.si/~ljc3m2/igor/software/AnnApp/</loc>
+        <loc>https://ajgorhoe.github.io/IGLibFramework/software/AnnApp/</loc>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://www2.arnes.si/~ljc3m2/igor/software/IGLibShellApp/</loc>
+        <loc>https://ajgorhoe.github.io/IGLibFramework/software/IGLibShellApp/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://www2.arnes.si/~ljc3m2/igor/software/IGLibShellApp/HashForm.html</loc>
+        <loc>https://ajgorhoe.github.io/IGLibFramework/software/IGLibShellApp/HashForm.html</loc>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://www2.arnes.si/~ljc3m2/igor/ioptlib/</loc>
+        <loc>https://ajgorhoe.github.io/IGLibFramework/ioptlib/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www2.arnes.si/~ljc3m2/inverse/sitemap.html</loc>
+        <loc>https://ajgorhoe.github.io/Inverse/sitemap.html</loc>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://www2.arnes.si/~ljc3m2/inverse/</loc>
+        <loc>https://ajgorhoe.github.io/Inverse/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www2.arnes.si/~ljc3m2/inverse/doc/other/invquick2.pdf</loc>
+        <loc>https://ajgorhoe.github.io/Inverse/doc/other/invquick2.pdf</loc>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://www2.arnes.si/~ljc3m2/inverse/doc/other/quick/</loc>
+        <loc>https://ajgorhoe.github.io/Inverse/doc/other/quick/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www2.arnes.si/~ljc3m2/inverse/doc/man/</loc>
+        <loc>https://ajgorhoe.github.io/Inverse/doc/man/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://www2.arnes.si/~ljc3m2/inverse/doc/phd/</loc>
+        <loc>https://ajgorhoe.github.io/Inverse/doc/phd/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www2.arnes.si/~ljc3m2/igor/sendigence/</loc>
+        <loc>https://ajgorhoe.github.io/IGLibFramework/sendigence/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
-        <loc>https://www2.arnes.si/~ljc3m2/igor/c3m/igs/igs.html</loc>
+        <loc>https://ajgorhoe.github.io/IGLibFramework/c3m/igs/igs.html</loc>
         <changefreq>weekly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
-        <loc>https://www2.arnes.si/~ljc3m2/igor/doc/</loc>
+        <loc>https://ajgorhoe.github.io/IGLibFramework/doc/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www2.arnes.si/~ljc3m2/igor/cobik/</loc>
+        <loc>https://ajgorhoe.github.io/IGLibFramework/cobik/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www2.arnes.si/~ljc3m2/igor/doc/theses/phd/</loc>
+        <loc>https://ajgorhoe.github.io/IGLibFramework/doc/theses/phd/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://www2.arnes.si/~ljc3m2/igor/0docigor/bib/bibliography_gresovnik_cobiss.htm</loc>
+        <loc>https://ajgorhoe.github.io/IGLibFramework/0docigor/bib/bibliography_gresovnik_cobiss.htm</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
+	<!--
     <url>
         <loc>https://www2.arnes.si/~ljc3m2/test/autoredirect/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
+	-->
     </url>
 </urlset>
