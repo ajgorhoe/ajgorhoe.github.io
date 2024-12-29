@@ -76,7 +76,7 @@ function igsGetTimestampShortNumeric() {
 * @param classMessageType is the class attribute  applied for stypling the specific type of 
 *  alert for styling.
 * @param classCloseButton is the class applied to the close button.
-* @param delay is th delay, in milliseconds, before the alert becomes invisible after the user
+* @param closingDelay is th delay, in milliseconds, before the alert becomes invisible after the user
 * closes it via the close button or mouse click.
 */
 function igsCreateAlertDiv(
@@ -85,7 +85,7 @@ function igsCreateAlertDiv(
     classMessageCategory = "IgsAlert",
     classMessageType = "IgsWarning",
     classCloseButton = "IgsCloseButton",
-    delay = 250
+    closingDelay = 250
 ) {
     try {
         const alertDiv = document.createElement('div');
@@ -108,7 +108,7 @@ function igsCreateAlertDiv(
             alertDiv.style.opacity = "0";
             setTimeout(() => {
                 alertDiv.style.display = "none";
-            }, delay);
+            }, closingDelay);
         };
         closeSpan.addEventListener('click', handleClose);
         return alertDiv;
@@ -133,13 +133,13 @@ function igsLaunchAlertDiv(
     classMessageCategory = "IgsAlert",
     classMessageType = "IgsWarning",
     classCloseButton = "IgsCloseButton",
-    delay = 250
+    closingDelay = 250
 ) {
     try {
         // Create alert's HTML elements:
         const alertHtml = igsCreateAlertDiv(
             title, message, classMessageCategory,
-            classMessageType, classCloseButton, delay);
+            classMessageType, classCloseButton, closingDelay);
         // Insert the alert before the first element of the body:
         const firstBodyElement = document.body.firstChild;
         if (firstBodyElement != null) {
@@ -155,10 +155,11 @@ function igsLaunchAlertDiv(
 
 /**
 Launches alert of type Success via the {@link igsLaunchAlertDiv} method by using
-standard parameters.
+standard parameters. The alert is launched immediately, regardless of readiness of DOM.
+If DOM is not ready then the function is called, the alert will not be visible.
 @param message is the message displayed in the alert, and can contain HTML markup.
 */
-function igsLaunchAlertSuccess(message = "This is a success alert.", logToConsole = true) {
+function igsLaunchAlertSuccessImmediately(message = "This is a success alert.", logToConsole = true) {
     try {
         igsLaunchAlertDiv(
             "Success:",
@@ -174,16 +175,26 @@ function igsLaunchAlertSuccess(message = "This is a success alert.", logToConsol
         }
     }
     catch (error) {
-        igsLogError("igsLaunchAlertSuccess: " + error.name + ": " + error.message);
+        igsLogError("igsLaunchAlertSuccessImmediately: " + error.name + ": " + error.message);
     }
 }
 
 /**
-Launches alert of type Info via the {@link igsLaunchAlertDiv} method by using
-standard parameters.
+Launches alert of type Success via the {@link igsLaunchAlertDiv} method by using
+standard parameters. The alert is launched when DOM is ready.
 @param message is the message displayed in the alert, and can contain HTML markup.
 */
-function igsLaunchAlertInfo(message = "This is an info alert.", logToConsole = true) {
+function igsLaunchAlertSuccess(message = "This is a success alert.", logToConsole = true) {
+    igsDoWhenDomReady(() => { igsLaunchAlertSuccessImmediately(message, logToConsole); });
+}
+
+/**
+Launches alert of type Info via the {@link igsLaunchAlertDiv} method by using
+standard parameters. The alert is launched immediately, regardless of readiness of DOM.
+If DOM is not ready then the function is called, the alert will not be visible.
+@param message is the message displayed in the alert, and can contain HTML markup.
+*/
+function igsLaunchAlertInfoImmediately(message = "This is an info alert.", logToConsole = true) {
     try {
         igsLaunchAlertDiv(
             "Info:",
@@ -199,16 +210,26 @@ function igsLaunchAlertInfo(message = "This is an info alert.", logToConsole = t
         }
     }
     catch (error) {
-        igsLogError("igsLaunchAlertInfo: " + error.name + ": " + error.message);
+        igsLogError("igsLaunchAlertInfoImmediately: " + error.name + ": " + error.message);
     }
 }
 
 /**
-Launches alert of type Warning via the {@link igsLaunchAlertDiv} method by using
-standard parameters.
+Launches alert of type Info via the {@link igsLaunchAlertDiv} method by using
+standard parameters. The alert is launched when DOM is ready.
 @param message is the message displayed in the alert, and can contain HTML markup.
 */
-function igsLaunchAlertWarning(message = "This is a warning alert.", logToConsole = true) {
+function igsLaunchAlertInfo(message = "This is a success alert.", logToConsole = true) {
+    igsDoWhenDomReady(() => { igsLaunchAlertInfoImmediately(message, logToConsole); });
+}
+
+/**
+Launches alert of type Warning via the {@link igsLaunchAlertDiv} method by using
+standard parameters. The alert is launched immediately, regardless of readiness of DOM.
+If DOM is not ready then the function is called, the alert will not be visible.
+@param message is the message displayed in the alert, and can contain HTML markup.
+*/
+function igsLaunchAlertWarningImmediately(message = "This is a warning alert.", logToConsole = true) {
     try {
         igsLaunchAlertDiv(
             "Warning:",
@@ -224,8 +245,17 @@ function igsLaunchAlertWarning(message = "This is a warning alert.", logToConsol
         }
     }
     catch (error) {
-        igsLogError("igsLaunchAlertWarning: " + error.name + ": " + error.message);
+        igsLogError("igsLaunchAlertWarningImmediately: " + error.name + ": " + error.message);
     }
+}
+
+/**
+Launches alert of type Warning via the {@link igsLaunchAlertDiv} method by using
+standard parameters. The alert is launched when DOM is ready.
+@param message is the message displayed in the alert, and can contain HTML markup.
+*/
+function igsLaunchAlertWarning(message = "This is a success alert.", logToConsole = true) {
+    igsDoWhenDomReady(() => { igsLaunchAlertWarningImmediately(message, logToConsole); });
 }
 
 /**
@@ -239,7 +269,7 @@ object (standard error object has "name" and "message" properties). For standard
 objects, a special display message is formed, and for arbitrart objects, the message 
 is obtained by JSON-serializing the object.
 */
-function igsLaunchAlertError(error = "This is an error alert.", logToConsole = true) {
+function igsLaunchAlertErrorImmediately(error = "This is an error alert.", logToConsole = true) {
     try {
         let message = error;
         if (typeof (error) === "object") {
@@ -263,9 +293,20 @@ function igsLaunchAlertError(error = "This is an error alert.", logToConsole = t
         }
     }
     catch (error) {
-        igsLogError("igsLaunchAlertError: " + error.name + ": " + error.message);
+        igsLogError("igsLaunchAlertErrorImmediately: " + error.name + ": " + error.message);
     }
 }
+
+
+/**
+Launches alert of type Error via the {@link igsLaunchAlertDiv} method by using
+standard parameters. The alert is launched when DOM is ready.
+@param message is the message displayed in the alert, and can contain HTML markup.
+*/
+function igsLaunchAlertError(message = "This is a success alert.", logToConsole = true) {
+    igsDoWhenDomReady(() => { igsLaunchAlertErrorImmediately(message, logToConsole); });
+}
+
 
 function igsLogSuccess(message = "Success.") {
     try {
@@ -321,7 +362,7 @@ function igsLogError(error = "Error.") {
         console.error(`${timestamp} Error: ${message}`);
     }
     catch (error) {
-        igsLogError("igsLogError: " + error.name + ": " + error.message);
+        console.error('igsLogError: ' + error.name + ": " + error.message);
     }
 }
 
@@ -361,22 +402,23 @@ function sleep(seconds) {
 }
 
 
-/**************************/
+/**********************************/
 /*                        */
-/*   DOCUMENT READINESS   */
+/*   DOCUMENT READINESS, DELAYS   */
 /*                        */
-/**************************/
+/**********************************/
 
 /**
 Returns true if the document's DOM has already been loaded and can be interacted with (this
 does not mean that the document / page has been loaded completely, there may be external
 resources that are still loading).
+See: https://stackoverflow.com/questions/8100576/how-to-check-if-dom-is-ready-without-a-framework
 */
 function igsIsDomReady() {
     if (document.readyState != 'loading') {
         return false;
     }
-    return !!(document.readyState === 'interactive' || document.readyState === 'complete');
+    return (document.readyState === 'interactive' || document.readyState === 'complete');
 }
 
 
@@ -402,6 +444,41 @@ function igsDoWhenDomReady(executedFunction) {
     }
     catch (error) {
         igsLogError("igsDoWhenDomReady: " + error.name + ": " + error.message);
+    }
+}
+
+/**
+ * Executes the specified function after the specified delay, or DOM readiness, or immediately.
+ * @param delayMsOrReadiness: specifies when the executedFunction is called.
+ *   If greater than 0 then function is called after the delay, in milliseconds, specified by 
+ *   this parameter. Delay is counted AFTER the DOM gets ready (or immediately if it is
+ *   already ready when this function is called). If 0 then function is called as soon as
+ *   DOM gets ready (imediately if this is already the case). If -1 or less then the function
+ *   is called immediately, regardless of the DOM readiness state. 
+ * @param executedFunction: the function that is called by this function.
+*/
+function igsDoWhenTimeMs(delayMsOrReadiness, executedFunction) {
+    try {
+        if (delayMsOrReadiness < 0) {
+            // delayMsOrReadiness is less than 0, execute the functionn immediately:
+            executedFunction();
+            return;
+        }
+        igsDoWhenDomReady(() => {
+            // Act when DOM gets ready...
+            if (delayMsOrReadiness == 0) {
+                // delayMsOrReadiness is 0, execute immediately after DOM gets ready:
+                executedFunction();
+                return;
+            }
+            // delayMsOrReadiness > 0: after DOM gets ready, execute with the specified delay:
+            setTimeout(() => {
+                executedFunction();
+            }, delayMsOrReadiness);
+        });
+    }
+    catch (error) {
+        igsLogError("igsDoWhenTimeMs: " + error.name + ": " + error.message);
     }
 }
 
@@ -542,4 +619,72 @@ function igsCanonicalRedirectWhenDomReady() {
     igsDoWhenDomReady(igsCanonicalRedirect);
 }
 
+
+/*********************/
+/*                   */
+/*    REDIRECTION    */
+/*                   */
+/*********************/
+
+
+/**
+ * Performs immediate redirection to the specified URL.
+ * Redirection is performed in such a way that the original URL of the page is not stored
+ * in the history, such that infinite loop of redirections is prevented when the back button
+ * is clicked in the browser.
+ * @param {any} newUrl - the URL to which the current page is redirected.
+ */
+function igsRedirectPlain(newUrl) {
+    window.location.replace(newUrl);
+}
+
+
+/**
+ * Redirects to the specified URL after the specified delay, or DOM readiness, or immediately.
+ * If redirection is performed with a delay (newUrl > 0) then an inline info alert is launched
+ * with information about the imminent redirection.
+ * @param delayMsOrReadiness: specifies when the redirection is performed.
+ *   If greater than 0 then redirection is performed after the delay, in milliseconds, specified 
+ *   by this parameter. Delay is counted AFTER the DOM gets ready (or immediately if it is
+ *   already ready when this function is called). If 0 then function is called as soon as
+ *   DOM gets ready (imediately if this is already the case). If -1 or less then redirection
+ *   is performed immediately, regardless of the DOM readiness state. 
+ * @param newUrl: the target URL to which redirection is performed.
+*/
+function igsRedirectWhenTimeMs(delayMsOrReadiness, newUrl) {
+    try {
+        if (delayMsOrReadiness > 0) {
+            const seconds = delayMsOrReadiness / 1000;
+            igsLaunchAlertWarning(`This page will be <b>redirected to</b>:<br>  <a href='${newUrl}'>${newUrl}</a><br> in ${seconds} seconds.`);
+        }
+        igsDoWhenTimeMs(delayMsOrReadiness, () => { igsRedirectPlain(newUrl); });
+    }
+    catch (error) {
+        igsLogError("igsRedirectWhenTimeMs: " + error.name + ": " + error.message);
+    }
+}
+
+// READING URL PARAMETERS:
+
+/**
+ * Retrieves and returns value of the specified URL parameter from URL of the current page.
+ * null is returned if the parameter is not specified in the URL.
+ * Example: In URL https://www.example.com/index.html?delay=5000
+ * parameter named "delayms" has the value of "5000". This is returned when on this page, we call
+ *   igsGetUrlParameter("delayms");
+ * We can convert the returned string value to a number by using the Number(...) constructor.
+ * @param {any} parameterName: name of the URL parameter to be returned.
+ * @returns value of the parameter
+ */
+function igsGetUrlParameter(parameterName) {
+    try {
+        const url_string = window.location.href;
+        let url = new URL(url_string);
+        let param = url.searchParams.get(parameterName);
+        return param;
+    }
+    catch (error) {
+        igsLogError("igsGetUrlParameter: " + error.name + ": " + error.message);
+    }
+}
 
