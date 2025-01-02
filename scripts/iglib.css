@@ -1,0 +1,159 @@
+body {
+    /*
+    font-family: Arial, Helvetica, sans-serif;
+    */
+    font-family: "Times New Roman", Times, serif;
+    font-size: 100%;
+    color: black;
+    background-color: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-style: italic;
+    font-weight: bold;
+    color: rgb(204, 0, 0);
+    margin-left: 4ch;
+    margin-right: 4ch;
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    text-indent: 2ch;
+    text-align: justify;
+}
+
+/* Links styles: */
+/* unvisited link */
+a:link {
+    color: blue;
+  }
+  
+/* visited link */
+a:visited {
+    color: green;
+  }
+  
+/* mouse over link */
+a:hover {
+    color: hotpink;
+  }
+  
+/* selected link */
+a:active {
+    color: darkviolet;
+  }
+
+
+/* NAVIGATION LINKS AT THE TOP: */  
+
+/* Navigation links at the top: */
+div.top-nav {
+    /* Child elements with flow property are removed from the normal
+    document flow, therefore parent container does not automatically
+    adjust to their height. This is fixed with the overflow:hidden 
+    property. Alternatively, clearfix:after can be used with the 
+    styles above (the clearfix class must be added to the parent) */
+    /* overflow: hidden; */ 
+    width: 100%;
+    padding: 1px;
+    font-size: 80%;
+  }
+
+/* top-most navigation links: */
+/* Left side of the navigation links */
+div.top-nav div.left {
+    float: left;
+}
+
+/* right side of the navigation links: */
+div.top-nav div.right {
+    float: right;
+}
+
+/* Clearfix class should be added to block elements (like div) that 
+contain child elements with float property, such that the parent 
+element adapts to floated children's height. */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* TITLE CARD containing a title, description, and image */
+
+/* Base styling for the title card container: */
+div.title-card {
+    display: flex; /* Use Flexbox for layout */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    align-items: center; /* Vertically center the content */
+    justify-content: space-between; /* Ensure spacing between items */
+    width: 100%;
+    padding: 0.5ch;
+    box-sizing: border-box; /* Include padding and borders in width calculations */
+}
+
+/* Left-side text container: */
+div.title-card .title-text {
+    flex: 1; /* Take up remaining space */
+    font-style: italic;
+    font-weight: bold;
+    padding: 1ch;
+    margin-right: 1ch;
+    box-sizing: border-box;
+}
+
+div.title-card .title-text p {
+    text-indent: 0ch; /* We don't want paragraph indentation in the title card. */
+    text-align: left; /* Don't use justify because width is smaller  */
+}
+
+/* Right-side logo container: */
+div.title-card .title-logo {
+    display: flex; /* Flexbox allows centering */
+    max-width: 35%; /* Limit the size of the logo container relative to text container */
+    align-items: center; /* Center image vertically */
+    justify-content: center; /* Center image horizontally */
+    box-sizing: border-box;
+    padding: 0ch;
+}
+
+/* Logo image */
+div.title-card .title-logo img {
+    display: block; /* Prevent inline spacing issues */
+    max-width: 336px; /* Limit the image's maximum width */
+    width: 100%; /* Allow the image to shrink proportionally */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Responsive design: stack elements for small screens */
+@media (max-width: 768px) {
+    div.title-card {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center items horizontally;  */
+    }
+
+    div.title-card .title-text,
+    div.title-card .title-logo {
+        max-width: 100%; /* Take full width in stacked layout */
+        flex: unset; /* Disable flex-based sizing for stacked layout */
+    }
+}
+
+/* TABLE OF CONTENTS: */
+
+div.table-of-contents {
+    /* Nothing to configure for now, just use something with
+    no effect: */
+    font-size: 80%;
+}
+
+div.main-contents {
+    /* Nothing to configure for now, just use something with
+    no effect: */
+    font-size: inherit;
+}
+
+
