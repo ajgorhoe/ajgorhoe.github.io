@@ -49,37 +49,27 @@ a:active {
 
 /* NAVIGATION LINKS AT THE TOP: */  
 
-/* Navigation links at the top: */
+/* Styling for the top navigation container */
 div.top-nav {
-    /* Child elements with flow property are removed from the normal
-    document flow, therefore parent container does not automatically
-    adjust to their height. This is fixed with the overflow:hidden 
-    property. Alternatively, clearfix:after can be used with the 
-    styles above (the clearfix class must be added to the parent) */
-    /* overflow: hidden; */ 
-    width: 100%;
-    padding: 1px;
-    font-size: 80%;
-  }
-
-/* top-most navigation links: */
-/* Left side of the navigation links */
-div.top-nav div.left {
-    float: left;
+    display: flex; /* Use Flexbox for layout */
+    justify-content: space-between; /* Place items at opposite ends */
+    align-items: center; /* Center content vertically */
+    width: 100%; /* Full-width container */
+    padding: 0.1rem; /* Add some padding */
+    font-size: 0.8rem; /* Adjust font size */
+    box-sizing: border-box; /* Include padding and borders in width calculations */
 }
 
-/* right side of the navigation links: */
-div.top-nav div.right {
-    float: right;
+/* Left section styling */
+div.top-nav .left {
+    padding: 0.0rem;
+    padding-right: 3.0ch;
 }
 
-/* Clearfix class should be added to block elements (like div) that 
-contain child elements with float property, such that the parent 
-element adapts to floated children's height. */
-.clearfix::after {
-    content: "";
-    display: table;
-    clear: both;
+/* Right section styling */
+div.top-nav .right {
+    padding: 0.0rem;
+    text-align: right; /* Align text to the right */
 }
 
 /* TITLE CARD containing a title, description, and image */
