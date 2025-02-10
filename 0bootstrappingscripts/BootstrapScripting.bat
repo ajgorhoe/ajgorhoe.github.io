@@ -2,7 +2,7 @@
 @echo off
 
 :: Prepares environment for execution of repository updating scripts
-:: and other scripts from the IGLibScripts repository.
+:: and other scripts from the IGLibScriSpts repository.
 ::
 :: Parameters:
 ::   %1: Optional. 0 - update of IGLibScripts repository is NOT forced
@@ -25,7 +25,7 @@ ver > nul
 setlocal
   
   set ModuleDirRelative=IGLibScripts
-  set CheckoutBranch=master
+  set CheckoutBranch=main
   set RepositoryAddress=https://github.com/ajgorhoe/IGLib.modules.IGLibScripts.git
   set RepositoryAddressSecondary=https://ajgorhoe@bitbucket.org/ajgorhoe/iglib.modules.iglibscripts.git
   set RepositoryAddressLocal=d:\backup_sync\bk_code\git\ig\misc\iglib_modules\IGLibScripts
