@@ -9,13 +9,13 @@ $scriptFilename = [System.IO.Path]::GetFileName($scriptPath)
 
 Write-Host "Script directory: $scriptDir"
 
-Write-Host "`nUpdating :"
+Write-Host "`nUpdating IGLibFramework:"
 & $(Join-Path $scriptDir "UpdateRepo_IGLibFramework.ps1")
 
-Write-Host "`nUpdating :"
+Write-Host "`nUpdating igor:"
 & $(Join-Path $scriptDir "UpdateRepo_igor.ps1")
 
-Write-Host "`nUpdating :"
+Write-Host "`nUpdating IGLibFrameworkCodedoc:"
 & $(Join-Path $scriptDir "UpdateRepo_IGLibFrameworkCodedoc.ps1")
 
 Write-Host "`nUpdating Inverse:"
