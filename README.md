@@ -8,8 +8,11 @@ This repository is part of the *Investigative Generic Library (IGLib)*. It is th
 ### Interesting links
 
 * [IGLib and Other Software - Site Map](index.html) ([on GitHub](https://ajgorhoe.github.io/))
-  * [IGLib-related Software - Site Map](IGLibFramework/index.html) ([on GitHub](https://ajgorhoe.github.io/IGLibFramework/)) - a site map of the *IGLib Framework* and related software (mainly legacy software)
-  * [IGLib-related Software - README](IGLibFramework/README.md) ([on GitHub](https://ajgorhoe.github.io/IGLibFramework/README.md)) - *IGLib Framework's* readme
+  * [IGLib-related Software - Site Map](https://ajgorhoe.github.io/IGLibFramework/index.html) ([on GitHub](https://ajgorhoe.github.io/IGLibFramework/)) - a site map of the *IGLib Framework* and related software (mainly legacy software)
+  * [IGLib-related Software - readme](IGLibFramework/README.md) ([on GitHub](https://ajgorhoe.github.io/IGLibFramework/README.md)) - *IGLib Framework's* readme
+    * [IGLibFramework/images/ readme](./IGLibFramework/images/README_images_info.md) ([on GitHub](https://ajgorhoe.github.io/IGLibFramework/images/README_images_info.md))
+      * [images/IGLib readme](./IGLibFramework/images/IGLib/README_images_IGLib.md) ([on GitHub](https://ajgorhoe.github.io/IGLibFramework/images/IGLib/README_images_IGLib.md))
+
 
 
 ### Transfer from Arnes
