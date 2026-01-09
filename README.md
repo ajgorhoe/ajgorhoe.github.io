@@ -1,8 +1,15 @@
+
 # IGLib Home
 
 ## About this Repository
 
-This repository is part of the *Investigative Generic Library (IGLib)*. It is the main source of archived documentaton related to *IGLib* legacy versions and related software that is still in development.
+This repository is part of the *Investigative Generic Library (IGLib)*. It is the main source of documentation related to the *Investigative Generic Library (IGLib)*, the legacy *IGLib Framework*, and related software.
+
+### Interesting links
+
+* [IGLib and Other Software - Site Map](index.html) ([on GitHub](https://ajgorhoe.github.io/))
+  * [IGLib-related Software - Site Map](IGLibFramework/index.html) ([on GitHub](https://ajgorhoe.github.io/IGLibFramework/)) - a site map of the *IGLib Framework* and related software (mainly legacy software)
+
 
 ### Transfer from Arnes
 
