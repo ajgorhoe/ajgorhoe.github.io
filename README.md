@@ -18,8 +18,6 @@ This repository is part of the *Investigative Generic Library (IGLib)*. It is th
           * [TreFoilKnotRayTracing/TransparentBackground readme](./IGLibFramework/images/Graphics3D/TreFoilKnotRayTracing/TransparentBackground/README_TreFoilKnotRayTracing_TransparentBackground.md) ([on GitHub](https://ajgorhoe.github.io/IGLibFramework/images/Graphics3D/TreFoilKnotRayTracing/TransparentBackground/README_TreFoilKnotRayTracing_TransparentBackground.md))
 
 
-
-
 ### Transfer from Arnes
 
 When some older pages were transferred form Arnes, the following name transforms were performed:
