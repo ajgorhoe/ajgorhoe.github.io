@@ -7,10 +7,10 @@ This repository is part of the *Investigative Generic Library (IGLib)*. It is th
 
 ### Interesting links
 
-* **[IGLib and Other Software - Site Map](index.html)** ([on GitHub](https://ajgorhoe.github.io/))
-* [IGLib and Other Software - readme on GitHub](https://ajgorhoe.github.io/README.md)
-  * **[IGLib-related Software - Site Map](https://ajgorhoe.github.io/IGLibFramework/index.html)** ([on GitHub](https://ajgorhoe.github.io/IGLibFramework/)) - a site map of the *IGLib Framework* and related software (mainly legacy software)
-  * [IGLib-related Software - readme](IGLibFramework/README.md) ([on GitHub](https://ajgorhoe.github.io/IGLibFramework/README.md)) - *IGLib Framework's* readme
+* [IGLib and Other Software - HTML Site Map](index.html) ([on GitHub](https://ajgorhoe.github.io/))
+* **[This readme on GitHub](https://ajgorhoe.github.io/README.md)**
+  * [IGLib-related Software - HTML Site Map](https://ajgorhoe.github.io/IGLibFramework/index.html) ([on GitHub](https://ajgorhoe.github.io/IGLibFramework/)) - a site map of the *IGLib Framework* and related software (mainly legacy software)
+  * **[IGLib-related Software - readme](IGLibFramework/README.md)** ([on GitHub](https://ajgorhoe.github.io/IGLibFramework/README.md)) - *IGLib Framework's* readme
     * **[IGLibFramework/images/ readme](./IGLibFramework/images/README_images_info.md)** ([on GitHub](https://ajgorhoe.github.io/IGLibFramework/images/README_images_info.md))
       * [images/IGLib readme](./IGLibFramework/images/IGLib/README_images_IGLib.md) ([on GitHub](https://ajgorhoe.github.io/IGLibFramework/images/IGLib/README_images_IGLib.md))
       * [images/Graphics3D readme](./IGLibFramework/images/Graphics3D/README_images_Graphics3D.md) ([on GitHub](https://ajgorhoe.github.io/IGLibFramework/images/Graphics3D/README_images_Graphics3D.md))
